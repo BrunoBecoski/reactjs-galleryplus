@@ -1,0 +1,44 @@
+{
+  "name": "reactjs-galeryplus",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "build-server": "tsc --noEmit -p tsconfig.server.json && tsup",
+    "dev-server": "tsup --watch --onSuccess \"node server/dist/main.js\"",
+    "run-server": "node server/dist/main.js"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.4.3",
+    "@fastify/multipart": "^10.1.9",
+    "@fastify/static": "^10.1.11",
+    "@tailwindcss/vite": "^4.3.5",
+    "classnames": "^2.5.1",
+    "fastify": "^5.12.8",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwind-variants": "^4.0.2",
+    "tailwindcss": "^4.3.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@rolldown/plugin-babel": "^0.3.0",
+    "@types/babel__core": "^7.20.5",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "globals": "^17.14.0",
+    "oxlint": "^1.90.0",
+    "tsup": "^9.0.0",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.6",
+    "vite-plugin-svgr": "^5.2.0"
+  }
+}
