@@ -27,7 +27,7 @@ interface CardProps
   as?: keyof React.JSX.IntrinsicElements;
 }
 
-export default function Card({
+export function Card({
   as = "div",
   size,
   variant,

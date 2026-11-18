@@ -21,7 +21,7 @@ interface DividerProps
   orientation?: "horizontal" | "vertical";
 }
 
-export default function Divider({
+export function Divider({
   className,
   orientation = "horizontal",
   ...props

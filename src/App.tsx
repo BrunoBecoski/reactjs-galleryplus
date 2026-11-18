@@ -1,13 +1,15 @@
-import Button from "./components/button";
-import ButtonIcon from "./components/button-icon";
-import Badge from "./components/badge";
-import Alert from "./components/alert";
-import Divider from "./components/divider";
+import { Button } from "./components/button";
+import { ButtonIcon } from "./components/button-icon";
+import { Badge } from "./components/badge";
+import { Alert } from "./components/alert";
+import { Divider } from "./components/divider";
+import { InputText } from "./components/input-text";
 
 import ChevronLeftIcon from "./assets/icons/chevron-left.svg?react";
 import ChevronRightIcon from "./assets/icons/chevron-right.svg?react";
+import SearchIcon from "./assets/icons/search.svg?react";
 
-export default function App() {
+export function App() {
   return (
     <div className="grid gap-7 p-6">
       <div className="flex gap-3">
@@ -48,6 +50,12 @@ export default function App() {
 
       <div>
         <Divider />
+      </div>
+
+      <div className="flex gap-3">
+        <InputText placeholder="Buscar foto" defaultValue="natureza" />
+        <InputText icon={SearchIcon} placeholder="Buscar foto" />
+        <InputText icon={SearchIcon} placeholder="Buscar foto" disabled />
       </div>
     </div>
   );
