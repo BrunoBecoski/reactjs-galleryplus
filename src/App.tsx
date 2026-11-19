@@ -4,6 +4,7 @@ import { Badge } from "./components/badge";
 import { Alert } from "./components/alert";
 import { Divider } from "./components/divider";
 import { InputText } from "./components/input-text";
+import { InputCheckbox } from "./components/input-checkbox";
 
 import ChevronLeftIcon from "./assets/icons/chevron-left.svg?react";
 import ChevronRightIcon from "./assets/icons/chevron-right.svg?react";
@@ -56,6 +57,11 @@ export function App() {
         <InputText placeholder="Buscar foto" defaultValue="natureza" />
         <InputText icon={SearchIcon} placeholder="Buscar foto" />
         <InputText icon={SearchIcon} placeholder="Buscar foto" disabled />
+      </div>
+
+      <div className="flex gap-3">
+        <InputCheckbox size="sm" />
+        <InputCheckbox size="md" />
       </div>
     </div>
   );
