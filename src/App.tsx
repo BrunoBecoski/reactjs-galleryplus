@@ -5,6 +5,7 @@ import { Alert } from "./components/alert";
 import { Divider } from "./components/divider";
 import { InputText } from "./components/input-text";
 import { InputCheckbox } from "./components/input-checkbox";
+import { InputSingleFile } from "./components/input-single-file";
 
 import ChevronLeftIcon from "./assets/icons/chevron-left.svg?react";
 import ChevronRightIcon from "./assets/icons/chevron-right.svg?react";
@@ -62,6 +63,10 @@ export function App() {
       <div className="flex gap-3">
         <InputCheckbox size="sm" />
         <InputCheckbox size="md" />
+      </div>
+
+      <div>
+        <InputSingleFile />
       </div>
     </div>
   );
