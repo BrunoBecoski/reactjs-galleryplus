@@ -8,6 +8,7 @@ import { Divider } from "./components/divider";
 import { InputText } from "./components/input-text";
 import { InputCheckbox } from "./components/input-checkbox";
 import { InputSingleFile } from "./components/input-single-file";
+import { ImageFilePreview } from "./components/image-file-preview";
 
 import ChevronLeftIcon from "./assets/icons/chevron-left.svg?react";
 import ChevronRightIcon from "./assets/icons/chevron-right.svg?react";
@@ -15,6 +16,8 @@ import SearchIcon from "./assets/icons/search.svg?react";
 
 export function App() {
   const form = useForm();
+  const file = form.watch("file");
+  const fileSource = file?.[0] ? URL.createObjectURL(file[0]) : undefined;
 
   return (
     <div className="grid gap-7 p-6">
@@ -74,6 +77,7 @@ export function App() {
           form={form}
           allowedExtensions={["png", "jpg", "jpeg", "webp"]}
           maxFileSizeInMB={50}
+          replaceBy={<ImageFilePreview src={fileSource} alt="Imagem" />}
           {...form.register("file")}
         />
       </div>
