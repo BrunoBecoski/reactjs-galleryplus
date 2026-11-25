@@ -13,6 +13,16 @@ import { ImageFilePreview } from "./components/image-file-preview";
 import ChevronLeftIcon from "./assets/icons/chevron-left.svg?react";
 import ChevronRightIcon from "./assets/icons/chevron-right.svg?react";
 import SearchIcon from "./assets/icons/search.svg?react";
+import {
+  Dialog,
+  DialogBody,
+  DialogClose,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTrigger,
+} from "./components/dialog";
+import { Text } from "./components/text";
 
 export function App() {
   const form = useForm();
@@ -80,6 +90,36 @@ export function App() {
           replaceBy={<ImageFilePreview src={fileSource} alt="Imagem" />}
           {...form.register("file")}
         />
+      </div>
+
+      <div>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button>Abrir Modal</Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>Teste Modal</DialogHeader>
+            <DialogBody>
+              <Text className="mb-4" as="div">
+                Teste conteúdo do Modal
+              </Text>
+              <InputSingleFile
+                form={form}
+                allowedExtensions={["png", "jpg", "jpeg", "webp"]}
+                maxFileSizeInMB={50}
+                replaceBy={<ImageFilePreview src={fileSource} alt="Imagem" />}
+                {...form.register("file")}
+              />
+            </DialogBody>
+
+            <DialogFooter>
+              <DialogClose asChild>
+                <Button variant="secondary">Cancelar</Button>
+              </DialogClose>
+              <Button>Adicionar</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
