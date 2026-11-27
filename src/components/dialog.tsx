@@ -1,6 +1,6 @@
-import type React from "react";
+import React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import cn from "classnames";
+import cx from "classnames";
 
 import { Card } from "./card";
 import { Text } from "./text";
@@ -20,7 +20,7 @@ interface DialogOverlayProps extends React.ComponentProps<
 export function DialogOverlay({ className, ...props }: DialogOverlayProps) {
   return (
     <DialogPrimitive.Overlay
-      className={cn(
+      className={cx(
         "fixed inset-0 z-50 bg-background-secondary/60 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0",
         className,
       )}
@@ -43,7 +43,7 @@ export function DialogContent({
     <DialogPrimitive.Portal>
       <DialogOverlay />
       <DialogPrimitive.Content
-        className={cn(
+        className={cx(
           "fixed left-[50%] top-[50%] w-full max-w-lg z-60 translate-x-[-50%] translate-y-[-50%] data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:slide-in-from-bottom-[48%] data-[state=closed]:slide-out-to-bottom-[48%] data-[state=open]:animate-in data-[state=closed]:animate-out",
           className,
         )}
@@ -67,7 +67,7 @@ export function DialogHeader({
   return (
     <>
       <header
-        className={cn("flex items-center justify-between", className)}
+        className={cx("flex items-center justify-between", className)}
         {...props}
       >
         <DialogPrimitive.Title>

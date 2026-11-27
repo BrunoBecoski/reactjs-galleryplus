@@ -1,4 +1,4 @@
-import type React from "react";
+import React from "react";
 import { tv } from "tailwind-variants";
 
 export const imageFilePreviewVariants = tv({

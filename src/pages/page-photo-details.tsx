@@ -1,4 +1,5 @@
 import { useParams } from "react-router";
+
 import { Text } from "../components/text";
 
 export function PagePhotoDetails() {
